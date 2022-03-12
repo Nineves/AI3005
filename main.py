@@ -2,6 +2,7 @@ import json
 import time
 
 from Task1 import Dijkstra
+from Task2 import BFS
 from Task3 import *
 
 COORD_PATH = "json/Coord.json"
@@ -28,9 +29,17 @@ if __name__ == '__main__':
     # initializes start and end point
     start = "1"
     end = "50"
+
     print("---------------- ** Task 1 ** -------------------")
     timeStart = time.time()
     Dijkstra(Cost, Dist, G).findShortestPath(start, end)
+    timeStop = time.time()
+    print("time: ", timeStop - timeStart)
+    print("-------------------------------------------------")
+
+    print("---------------- ** Task 2 ** -------------------")
+    timeStart = time.time()
+    BFS(Cost, Dist, G, 287932).template(start, end)
     timeStop = time.time()
     print("time: ", timeStop - timeStart)
     print("-------------------------------------------------")
