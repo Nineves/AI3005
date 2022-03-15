@@ -2,6 +2,7 @@ import json
 import time
 
 from Task1 import Dijkstra
+from Task2_UCS import UCS
 from Task2 import BFS
 from Task3 import *
 
@@ -37,9 +38,16 @@ if __name__ == '__main__':
     print("time: ", timeStop - timeStart)
     print("-------------------------------------------------")
 
-    print("---------------- ** Task 2 ** -------------------")
+    print("---------------- ** Task 2 BFS** -------------------")
     timeStart = time.time()
     BFS(Cost, Dist, G, 287932).template(start, end)
+    timeStop = time.time()
+    print("time: ", timeStop - timeStart)
+    print("-------------------------------------------------")
+
+    print("---------------- ** Task 2 UCS** -------------------")
+    timeStart = time.time()
+    UCS(Cost, Dist, G, 287932).UCSbegin(start, end)
     timeStop = time.time()
     print("time: ", timeStop - timeStart)
     print("-------------------------------------------------")
